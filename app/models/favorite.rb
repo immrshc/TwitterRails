@@ -1,0 +1,2 @@
+class Favorite < Response
+end

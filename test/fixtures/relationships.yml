@@ -1,0 +1,29 @@
+relationship_1:
+        id: 1
+        follower_id: 1
+        followed_id: 2
+
+relationship_2:
+        id: 2
+        follower_id: 1
+        followed_id: 3
+
+relationship_3:
+        id: 3
+        follower_id: 2
+        followed_id: 1
+
+relationship_4:
+        id: 4
+        follower_id: 2
+        followed_id: 3
+
+relationship_5:
+        id: 5
+        follower_id: 3
+        followed_id: 1
+
+relationship_6:
+        id: 6
+        follower_id: 3
+        followed_id: 2

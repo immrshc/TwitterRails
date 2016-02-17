@@ -1,0 +1,53 @@
+response_1:
+  id: 1
+  type: "Favorite"
+  post_id: 1 
+  user_id: 1
+
+response_2:
+  id: 2
+  type: "Retweet"
+  post_id: 1 
+  user_id: 2
+
+response_3:
+  id: 3
+  type: "Favorite"
+  post_id: 1 
+  user_id: 3
+
+response_4:
+  id: 4
+  type: "Retweet"
+  post_id: 3
+  user_id: 2
+
+response_5:
+  id: 5
+  type: "Favorite"
+  post_id: 3 
+  user_id: 1
+
+response_6:
+  id: 6
+  type: "Favorite"  
+  post_id: 3 
+  user_id: 3
+
+response_7:
+  id: 7
+  type: "Retweet"
+  post_id: 5 
+  user_id: 1
+
+response_8:
+  id: 8
+  type: "Favorite"
+  post_id: 6 
+  user_id: 1
+
+response_9:
+  id: 9
+  type: "favorite"
+  post_id: 6 
+  user_id: 2

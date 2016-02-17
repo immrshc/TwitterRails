@@ -1,0 +1,25 @@
+user_1:
+  id: 1
+  user_token: 0d0871e9c96d93d4
+  user_identifier: shoichiimamura
+  username: ShoichiImamura
+  hashed_password: <%= BCrypt::Password.create('1106') %>
+  email: syoichiimamura@gmail.com
+
+user_2:
+  id: 2
+  user_token: 265632649d29fd78
+  user_identifier: shoichi
+  username: Shoichi
+  hashed_password: <%= BCrypt::Password.create('1106') %>
+  email: s1210259@u.tsukuba.ac.jp
+
+user_3:
+  id: 3
+  user_identifier: imamura
+  user_token: bc131d92d923c398
+  username: Imamura
+  hashed_password: <%= BCrypt::Password.create('1106') %>
+  email: syoichiimamura@yahoo.com
+
+

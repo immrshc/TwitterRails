@@ -1,0 +1,62 @@
+post_1:
+  id: 1
+  user_id: 1
+  post_token: <%= Digest::SHA1.hexdigest("1" + rand(1..20).to_s) %>
+  text: これがはじめての投稿です
+  latitude: 35.685175
+  longitude: 139.7528
+  image_key: "ShoichiImamura/Post/Image01.jpg"
+  image_ctype: "image/jpeg"
+  reply_id: 3
+
+post_2:
+  id: 2
+  user_id: 1
+  post_token: <%= Digest::SHA1.hexdigest("2" + rand(1..20).to_s) %>
+  text: これが2度目の投稿です
+  latitude: 35.685654
+  longitude: 139.756073
+  image_key: "ShoichiImamura/Post/Image02.jpg"
+  image_ctype: "image/jpeg"
+  reply_id: 3
+
+post_3:
+  id: 3
+  user_id: 2 
+  post_token: <%= Digest::SHA1.hexdigest("3" + rand(1..20).to_s) %>
+  text: This is my first posting!
+  latitude: 35.680634
+  longitude: 139.766373
+  image_key: "ShoichiImamura/Post/Image03.jpg"
+  image_ctype: "image/jpeg"
+
+post_4:
+  id: 4
+  user_id: 2
+  post_token: <%= Digest::SHA1.hexdigest("4" + rand(1..20).to_s) %>
+  text: This is my second posting!
+  latitude: 35.683632
+  longitude: 139.744915
+  image_key: "ShoichiImamura/Post/Image05.jpg"
+  image_ctype: "image/jpeg"
+  
+post_5:
+  id: 5
+  user_id: 3
+  post_token: <%= Digest::SHA1.hexdigest("5" + rand(1..20).to_s) %>
+  text: Hello World!
+  latitude: 35.678194
+  longitude: 139.744057
+  image_key: "ShoichiImamura/Post/Image06.jpg"
+  image_ctype: "image/jpeg"
+  reply_id: 6
+
+post_6:
+  id: 6
+  user_id: 3
+  post_token: <%= Digest::SHA1.hexdigest("6" + rand(1..20).to_s) %>
+  text: Welcome to Twitter!
+  latitude: 35.681540
+  longitude: 139.748692
+  image_key: "ShoichiImamura/Post/Image01.jpg"
+  image_ctype: "image/jpeg"
