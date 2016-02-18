@@ -1,7 +1,7 @@
 class Authentication::SignInController < ApplicationController
     protect_from_forgery :except => [:sign_in]	
 	def sign_in
-		if user = User.find_by(params[:user_identifier], hashed_password: BCrypt::Password.create(params[:password]))
+		if user = Authentication::Authenticator.new.valid_user(user_params)
 			@user = user
 			@result = true
 		else

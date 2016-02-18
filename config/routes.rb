@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   namespace :timeline do
   	get 'test' => 'timeline#test'
   	post 'show' => 'timeline#show_timeline'
-	post 'show/mypost' => 'timeline/show_mypost'
-	post 'show/myfavorite' => 'timeline/show_myfavorite'
+	post 'show/reply' => 'timeline#show_reply'
+	post 'show/mypost' => 'timeline#show_mypost'
+	post 'show/myfavorite' => 'timeline#show_myfavorite'
   end
 
   namespace :post do

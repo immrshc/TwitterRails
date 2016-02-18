@@ -16,7 +16,6 @@ class Timeline::TimelineController < ApplicationController
 
 	def show_timeline
 		user = User.find_by(user_params)
-		#user = User.find_by(id: 1)
 		timeLineArray = []
 		if user then
 			Relationship.where(follower_id: user.id).each do |relationsip|
@@ -25,9 +24,26 @@ class Timeline::TimelineController < ApplicationController
 				end
 			end
 		end
-		logger.debug("===============================")
-		logger.debug(timeLineArray)
+		
+		Post.where(user_id: user.id).each do |mypost|
+			timeLineArray.push Timeline.new(mypost, user)
+		end
+		
+		timeLineArray.sort_by!{|t| t.post.created_at}
 		@timeLineArray = timeLineArray.reverse
+	end
+
+	def show_reply
+		post = Post.find_by(post_params)
+		timeLineArray = []
+		if post then
+			Post.where(reply_id: post.id).each do |reply|
+				timeLineArray.push Timeline.new(reply, post.user)
+			end
+		end
+
+		timeLineArray.sort_by!{|t| t.post.created_at}
+		@timeLineArray = timeLineArray
 	end
 
 	def show_mypost
@@ -41,6 +57,10 @@ class Timeline::TimelineController < ApplicationController
 	private 
 	def user_params
 		params.require(:user).permit(:user_token, :user_identifier)
+	end
+
+	def post_params
+		params.require(:post).permit(:post_token)
 	end
 
 end

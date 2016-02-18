@@ -5,7 +5,7 @@ post_1:
   text: これがはじめての投稿です
   latitude: 35.685175
   longitude: 139.7528
-  image_key: "ShoichiImamura/Post/Image03.jpg"
+  image_key: "ShoichiImamura/Post/Image01.jpg"
   image_ctype: "image/jpeg"
   reply_id: 3
   image_width: 667.0

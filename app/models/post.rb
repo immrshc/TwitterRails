@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
 
 	def set_image(image)
 		if file_invalid?(image)
+			logger.debug('=====================set_image==================')
 			self.image_key = "#{self.user.username}/Post/#{image.original_filename}"
 			self.image_ctype = image.content_type
 			self.image_width = get_image_frame(image)[0]
@@ -27,12 +28,17 @@ class Post < ActiveRecord::Base
 	def file_invalid?(image)
 		ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
 		unless ps.include?(image.content_type) && image.size < 1.megabyte then
+			logger.debug('=====================validate==================')
 			logger.debug("画像のタイプ: #{image.content_type}, 容量: #{image.size}")
 			false
+		else
+			true
 		end
 	end
 
 	def get_image_frame(image)
+		logger.debug('=====================path==================')
+		logger.debug(image.path)
     		FastImage.size(image.path)
     	end
 
