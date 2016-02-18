@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217091137) do
+ActiveRecord::Schema.define(version: 20160217193144) do
 
   create_table "posts", force: :cascade do |t|
-    t.integer  "user_id",     limit: 4,     null: false
-    t.string   "post_token",  limit: 255,   null: false
-    t.text     "text",        limit: 65535, null: false
-    t.float    "latitude",    limit: 24
-    t.float    "longitude",   limit: 24
-    t.string   "image_key",   limit: 255
-    t.string   "image_ctype", limit: 255
-    t.integer  "reply_id",    limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "user_id",      limit: 4,     null: false
+    t.string   "post_token",   limit: 255,   null: false
+    t.text     "text",         limit: 65535, null: false
+    t.float    "latitude",     limit: 24
+    t.float    "longitude",    limit: 24
+    t.string   "image_key",    limit: 255
+    t.string   "image_ctype",  limit: 255
+    t.integer  "reply_id",     limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.float    "image_width",  limit: 24
+    t.float    "image_height", limit: 24
   end
 
   add_index "posts", ["post_token"], name: "index_posts_on_post_token", unique: true, using: :btree

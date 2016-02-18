@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   	get 'test' => 'post#test'
   	post 'without' => 'post#upload'
 	post 'with' => 'post#upload_with_image'
-	post 'download/image' => 'post#download_image'
+	get 'download/image' => 'post#download_image'
   end
   
 end

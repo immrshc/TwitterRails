@@ -5,9 +5,11 @@ post_1:
   text: これがはじめての投稿です
   latitude: 35.685175
   longitude: 139.7528
-  image_key: "ShoichiImamura/Post/Image01.jpg"
+  image_key: "ShoichiImamura/Post/Image03.jpg"
   image_ctype: "image/jpeg"
   reply_id: 3
+  image_width: 667.0
+  image_height: 1000.0
 
 post_2:
   id: 2
@@ -19,6 +21,8 @@ post_2:
   image_key: "ShoichiImamura/Post/Image02.jpg"
   image_ctype: "image/jpeg"
   reply_id: 3
+  image_width: 900.0
+  image_height: 1600.0
 
 post_3:
   id: 3
@@ -27,8 +31,10 @@ post_3:
   text: This is my first posting!
   latitude: 35.680634
   longitude: 139.766373
-  image_key: "ShoichiImamura/Post/Image03.jpg"
+  image_key: "Shoichi/Post/Image03.jpg"
   image_ctype: "image/jpeg"
+  image_width: 320.0
+  image_height: 568.0
 
 post_4:
   id: 4
@@ -37,8 +43,6 @@ post_4:
   text: This is my second posting!
   latitude: 35.683632
   longitude: 139.744915
-  image_key: "ShoichiImamura/Post/Image05.jpg"
-  image_ctype: "image/jpeg"
   
 post_5:
   id: 5
@@ -47,9 +51,11 @@ post_5:
   text: Hello World!
   latitude: 35.678194
   longitude: 139.744057
-  image_key: "ShoichiImamura/Post/Image06.jpg"
+  image_key: "Imamura/Post/Image06.jpg"
   image_ctype: "image/jpeg"
   reply_id: 6
+  image_width: 640.0
+  image_height: 1136.0
 
 post_6:
   id: 6
@@ -58,5 +64,3 @@ post_6:
   text: Welcome to Twitter!
   latitude: 35.681540
   longitude: 139.748692
-  image_key: "ShoichiImamura/Post/Image01.jpg"
-  image_ctype: "image/jpeg"
