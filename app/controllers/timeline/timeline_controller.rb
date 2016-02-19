@@ -18,19 +18,29 @@ class Timeline::TimelineController < ApplicationController
 		user = User.find_by(user_params)
 		timeLineArray = []
 		if user then
+
+			#自分のフォローしているユーザの投稿を追加する
 			Relationship.where(follower_id: user.id).each do |relationsip|
 				Post.where(user_id: relationsip.followed.id).each do |post|
 					timeLineArray.push Timeline.new(post, user)
 				end
 			end
-		end
 		
-		Post.where(user_id: user.id).each do |mypost|
-			timeLineArray.push Timeline.new(mypost, user)
-		end
+			#自分の投稿を追加する
+			Post.where(user_id: user.id).each do |mypost|
+				timeLineArray.push Timeline.new(mypost, user)
+			end
+			
+			#自分がリツイートした投稿を追加する
+			Retweet.where(user_id: user.id).each do |retweet|
+				timeLineArray.push Timeline.new(retweet.post, user)
+			end
+
+			#作成時順にソートする
+			timeLineArray.sort_by!{|t| t.post.created_at}
+			@timeLineArray = timeLineArray.reverse
 		
-		timeLineArray.sort_by!{|t| t.post.created_at}
-		@timeLineArray = timeLineArray.reverse
+		end
 	end
 
 	def show_reply
@@ -47,10 +57,27 @@ class Timeline::TimelineController < ApplicationController
 	end
 
 	def show_mypost
+		user = User.find_by(user_params)
+		timeLineArray = []
+		if user then
+			Post.where(user_id: user.id).each do |mypost|
+				timeLineArray.push Timeline.new(mypost, user)
+			end
 
+			@timeLineArray = timeLineArray.reverse
+		end
 	end
 
 	def show_myfavorite
+		user = User.find_by(user_params)
+		timeLineArray = []
+		if user then
+			Favorite.where(user_id: user.id).each do |favorite|
+				timeLineArray.push Timeline.new(favorite.post, user)
+			end
+
+			@timeLineArray = timeLineArray.reverse
+		end
 
 	end
 

@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 		if raw_password.kind_of?(String)
 			self.hashed_password = BCrypt::Password.create(raw_password)
 		elsif raw_password.nil?
-			raise ArgumentError, 'パスワードが設定されていません'
+			nil
 		end
 	end
 

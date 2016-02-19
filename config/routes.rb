@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 	post 'show/reply' => 'timeline#show_reply'
 	post 'show/mypost' => 'timeline#show_mypost'
 	post 'show/myfavorite' => 'timeline#show_myfavorite'
+  	post 'favorite/add' => 'response#favorite_add'
+	post 'favorite/subtract' => 'response#favorite_subtract'
+	post 'retweet/add' => 'response#retweet_add'
+	post 'retweet/subtract' => 'response#retweet_subtract'
+  
   end
 
   namespace :post do
