@@ -25,5 +25,11 @@ Rails.application.routes.draw do
 	post 'with' => 'post#upload_with_image'
 	get 'download/image' => 'post#download_image'
   end
-  
+
+  namespace :account do
+	post 'show/myself' => 'account#show_myself'
+	post 'show/following' => 'account#show_following'
+  	post 'show/follower' => 'account#show_follower'
+  end
+
 end

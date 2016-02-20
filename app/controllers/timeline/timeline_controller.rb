@@ -1,5 +1,5 @@
 class Timeline::TimelineController < ApplicationController
-	protect_from_forgery :except => [:show_timeline, :show_mypost, :show_myfavorite]
+	protect_from_forgery :except => [:show_timeline, :show_reply, :show_mypost, :show_myfavorite]
 	def test
 		#ユーザ1がリツイートした投稿
 		#render json: Retweet.find_by(user_id: 1).post
@@ -21,7 +21,7 @@ class Timeline::TimelineController < ApplicationController
 
 			#自分のフォローしているユーザの投稿を追加する
 			Relationship.where(follower_id: user.id).each do |relationsip|
-				Post.where(user_id: relationsip.followed.id).each do |post|
+				Post.where(user_id: relationsip.following.id).each do |post|
 					timeLineArray.push Timeline.new(post, user)
 				end
 			end
@@ -32,10 +32,11 @@ class Timeline::TimelineController < ApplicationController
 			end
 			
 			#自分がリツイートした投稿を追加する
-			Retweet.where(user_id: user.id).each do |retweet|
-				timeLineArray.push Timeline.new(retweet.post, user)
+			if Retweet.where(user_id: user.id).exists? then 
+				Retweet.where(user_id: user.id).each do |retweet|
+					timeLineArray.push Timeline.new(retweet.post, user)
+				end
 			end
-
 			#作成時順にソートする
 			timeLineArray.sort_by!{|t| t.post.created_at}
 			@timeLineArray = timeLineArray.reverse
@@ -63,8 +64,18 @@ class Timeline::TimelineController < ApplicationController
 			Post.where(user_id: user.id).each do |mypost|
 				timeLineArray.push Timeline.new(mypost, user)
 			end
+			
 
+			#自分がリツイートした投稿を追加する
+			if Retweet.where(user_id: user.id).exists? then
+				Retweet.where(user_id: user.id).each do |retweet|
+					timeLineArray.push Timeline.new(retweet.post, user)
+				end
+			end
+			#作成時順にソートする
+			timeLineArray.sort_by!{|t| t.post.created_at}
 			@timeLineArray = timeLineArray.reverse
+		
 		end
 	end
 
@@ -72,11 +83,13 @@ class Timeline::TimelineController < ApplicationController
 		user = User.find_by(user_params)
 		timeLineArray = []
 		if user then
-			Favorite.where(user_id: user.id).each do |favorite|
-				timeLineArray.push Timeline.new(favorite.post, user)
-			end
+			if Favorite.where(user_id: user.id).exists? then
+				Favorite.where(user_id: user.id).each do |favorite|
+					timeLineArray.push Timeline.new(favorite.post, user)
+				end
 
-			@timeLineArray = timeLineArray.reverse
+				@timeLineArray = timeLineArray.reverse
+			end
 		end
 
 	end

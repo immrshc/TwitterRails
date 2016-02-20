@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160217193144) do
+ActiveRecord::Schema.define(version: 20160220173913) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id",      limit: 4,     null: false
@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(version: 20160217193144) do
   add_index "posts", ["reply_id"], name: "index_posts_on_reply_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
-    t.integer  "follower_id", limit: 4, null: false
-    t.integer  "followed_id", limit: 4, null: false
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "follower_id",  limit: 4, null: false
+    t.integer  "following_id", limit: 4, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationships", ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+  add_index "relationships", ["following_id"], name: "index_relationships_on_following_id", using: :btree
 
   create_table "responses", force: :cascade do |t|
     t.string   "type",       limit: 255, null: false

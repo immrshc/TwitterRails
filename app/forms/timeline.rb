@@ -10,18 +10,18 @@ class Timeline
 	attr_accessor :retweet_count
 
 	def initialize(post, user)
-		self.post = post
-		self.user = user
+		@post = post
+		@user = user
 
 		if post.image_key then
-			self.image_url = "http://localhost:3000/post/download/image?post[id]=#{post.id}"
+			@image_url = "http://localhost:3000/post/download/image?post[id]=#{post.id}"
 		else
-			self.image_url = ""
+			@image_url = ""
 		end
 
-		self.favorite_state = Favorite.where(user_id: user.id, post_id: post.id).exists?
-		self.favorite_count = Favorite.where(post_id: post.id).count
-		self.retweet_state = Retweet.where(user_id: user.id, post_id: post.id).exists?
-		self.retweet_count = Retweet.where(post_id: post.id).count 
+		@favorite_state = Favorite.where(user_id: user.id, post_id: post.id).exists?
+		@favorite_count = Favorite.where(post_id: post.id).count
+		@retweet_state = Retweet.where(user_id: user.id, post_id: post.id).exists?
+		@retweet_count = Retweet.where(post_id: post.id).count 
 	end
 end

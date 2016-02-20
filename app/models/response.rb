@@ -6,4 +6,7 @@ class Response < ActiveRecord::Base
 	validates :type, presence: true
 	validates :user_id, presence: true
 	validates :post_id, presence: true
+
+	self.inheritance_column = :_type_disabled
+
 end
