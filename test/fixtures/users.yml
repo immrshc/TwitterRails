@@ -5,6 +5,7 @@ user_1:
   username: ShoichiImamura
   hashed_password: <%= BCrypt::Password.create('1106') %>
   email: syoichiimamura@gmail.com
+  icon_image_url: http://pic.prepics-cdn.com/materialabys/53659494_480x384.jpeg
 
 user_2:
   id: 2
@@ -13,6 +14,7 @@ user_2:
   username: Shoichi
   hashed_password: <%= BCrypt::Password.create('1106') %>
   email: s1210259@u.tsukuba.ac.jp
+  icon_image_url: http://pic.prepics-cdn.com/8703a4222c30c/53740069.jpeg
 
 user_3:
   id: 3
@@ -21,6 +23,7 @@ user_3:
   username: Imamura
   hashed_password: <%= BCrypt::Password.create('1106') %>
   email: syoichiimamura@yahoo.com
+  icon_image_url: http://pic.prepics-cdn.com/materialabys/53659480.jpeg
 
 user_4:
   id: 4
@@ -29,4 +32,4 @@ user_4:
   username: freee
   hashed_password: <%= BCrypt::Password.create('1106') %>
   email: freee@gmail.com
-
+  icon_image_url: http://pic.prepics-cdn.com/4f031f9188ffa/53655528_480x320.jpeg

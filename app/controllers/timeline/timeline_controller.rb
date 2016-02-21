@@ -48,13 +48,10 @@ class Timeline::TimelineController < ApplicationController
 		if user && map_params then
 			posts = Timeline::Geography.new(map_params).get_near_posts
 			if posts then
-				logger.debug('=========={timeLineArray.count}====================')
-
 				posts.each do |post|
 					timeLineArray.push Timeline.new(post, user)
 				end
 			end
-			logger.debug(timeLineArray.count)
 			@timeLineArray = timeLineArray.reverse
 		end
 	end

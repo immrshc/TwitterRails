@@ -36,4 +36,4 @@ relationship_7:
 relationship_8:
         id: 8
         follower_id: 4
-        following_id: 3
+        following_id: 1

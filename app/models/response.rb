@@ -7,6 +7,7 @@ class Response < ActiveRecord::Base
 	validates :user_id, presence: true
 	validates :post_id, presence: true
 
-	self.inheritance_column = :_type_disabled
+	#下記を実行するとResponseをsaveできなくなる
+	#self.inheritance_column = :_type_disabled
 
 end

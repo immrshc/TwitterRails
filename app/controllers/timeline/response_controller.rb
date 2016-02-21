@@ -8,7 +8,9 @@ class Timeline::ResponseController < ApplicationController
 		favorite = Favorite.new(user_id: user.id, post_id: post.id)
 		if favorite.save then
 			@result = true
+			logger.debug("========================true====================")
 		else
+			logger.debug("========================false====================")
 			@result = false
 		end
 	end
@@ -19,8 +21,10 @@ class Timeline::ResponseController < ApplicationController
 		retweet = Retweet.new(user_id: user.id, post_id: post.id)
 		if retweet.save then
 			@result = true
+			logger.debug("=================true===============")
 		else
 			@result = false
+			logger.debug("==================false==============")
 		end
 	end
 
@@ -30,11 +34,14 @@ class Timeline::ResponseController < ApplicationController
 		favorite =  Favorite.find_by(user_id: user.id, post_id: post.id)
 		if favorite then
 			if favorite.destroy then
+				logger.debug("=================true===============")
 				@result = true
 			else
+				logger.debug("=================false===============")
 				@result = false
 			end
 		else
+			logger.debug("=================false===============")
 			@result = false
 		end
 	end

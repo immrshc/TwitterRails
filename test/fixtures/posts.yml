@@ -1,36 +1,37 @@
 post_1:
   id: 1
-  user_id: 1
+  user_id: 2
   post_token: <%= Digest::SHA1.hexdigest("1" + rand(1..20).to_s) %>
-  text: これがはじめての投稿です
+  text: 私も初めての投稿です
   latitude: 36.089642
   longitude: 140.106282
+  reply_id: 17
   image_key: "ShoichiImamura/Post/Image01.jpg"
   image_ctype: "image/jpeg"
-  reply_id: 3
   image_width: 667.0
   image_height: 1000.0
 
 post_2:
   id: 2
-  user_id: 1
+  user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("2" + rand(1..20).to_s) %>
-  text: これが2度目の投稿です
+  text: This is my first posting!
   latitude: 36.089365
   longitude: 140.105381
+  reply_id: 15
   image_key: "ShoichiImamura/Post/Image02.jpg"
   image_ctype: "image/jpeg"
-  reply_id: 3
   image_width: 900.0
   image_height: 1600.0
 
 post_3:
   id: 3
-  user_id: 2 
+  user_id: 3 
   post_token: <%= Digest::SHA1.hexdigest("3" + rand(1..20).to_s) %>
-  text: This is my first posting!
+  text: 私もです！
   latitude: 36.089757
   longitude: 140.105381
+  reply_id: 16
   image_key: "Shoichi/Post/Image03.jpg"
   image_ctype: "image/jpeg"
   image_width: 320.0
@@ -43,24 +44,121 @@ post_4:
   text: This is my second posting!
   latitude: 36.091844
   longitude: 140.105381
+  reply_id: 17
   
 post_5:
   id: 5
-  user_id: 3
+  user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("5" + rand(1..20).to_s) %>
   text: Hello World!
   latitude: 36.09408
   longitude: 140.105381
+  reply_id: 6
   image_key: "Imamura/Post/Image06.jpg"
   image_ctype: "image/jpeg"
-  reply_id: 6
   image_width: 640.0
   image_height: 1136.0
 
 post_6:
   id: 6
-  user_id: 3
+  user_id: 2
   post_token: <%= Digest::SHA1.hexdigest("6" + rand(1..20).to_s) %>
   text: Welcome to Twitter!
   latitude: 36.10408
   longitude: 140.105381
+
+post_7:
+  id: 7
+  user_id: 3
+  post_token: <%= Digest::SHA1.hexdigest("7" + rand(1..20).to_s) %>
+  text: 今を戦えない者に、次とか来年とかを言う資格はない。
+  latitude: 36.106036
+  longitude: 140.113083
+
+post_8:
+  id: 8
+  user_id: 1
+  post_token: <%= Digest::SHA1.hexdigest("8" + rand(1..20).to_s) %>
+  text: 好機は、それが去ってしまうまで気づかれないものだ。
+  latitude: 36.106036
+  longitude: 140.113083
+
+post_9:
+  id: 9
+  user_id: 2
+  post_token: <%= Digest::SHA1.hexdigest("9" + rand(1..20).to_s) %>
+  text: どんな芸術家でも最初は素人だった。
+  latitude: 36.102016
+  longitude: 140.108128
+
+post_10:
+  id: 10
+  user_id: 3
+  post_token: <%= Digest::SHA1.hexdigest("10" + rand(1..20).to_s) %>
+  text: イチカワのラーメンうまい！
+  latitude: 36.096764
+  longitude: 140.108128
+
+post_11:
+  id: 11
+  user_id: 2
+  post_token: <%= Digest::SHA1.hexdigest("11" + rand(1..20).to_s) %>
+  text: 世の中 正しいことばかりではありません。 お気をつけて。
+  latitude: 36.093283
+  longitude: 140.109003
+
+post_12:
+  id: 12
+  user_id: 1
+  post_token: <%= Digest::SHA1.hexdigest("12" + rand(1..20).to_s) %>
+  text: あきらめたらそこで試合終了だよ
+  latitude: 36.10408
+  longitude: 140.110727
+
+post_13:
+  id: 13
+  user_id: 3
+  post_token: <%= Digest::SHA1.hexdigest("13" + rand(1..20).to_s) %>
+  text: 下手糞の上級者への道のりは己が下手さを知りて一歩目
+  latitude: 36.095605
+  longitude: 140.105381
+  image_key: "Imamura/Post/Image06.jpg"
+  image_ctype: "image/jpeg"
+  image_width: 640.0
+  image_height: 1136.0
+
+post_14:
+  id: 14
+  user_id: 1
+  post_token: <%= Digest::SHA1.hexdigest("14" + rand(1..20).to_s) %>
+  text: 思った通りの人生ではなかった。しかし、よかったとなら言える人生だったかもしれない
+  latitude: 36.094654
+  longitude: 140.110727
+
+post_15:
+  id: 15
+  user_id: 2
+  post_token: <%= Digest::SHA1.hexdigest("15" + rand(1..20).to_s) %>
+  text: 森の分かれ道では人の通らぬ道を選ぼう。すべてが変わる
+  latitude: 36.10408
+  longitude: 140.105381
+
+post_16:
+  id: 16
+  user_id: 3
+  post_token: <%= Digest::SHA1.hexdigest("16" + rand(1..20).to_s) %>
+  text: It's not too late to be a genius.
+  latitude: 36.09405
+  longitude: 140.109673
+  image_key: "ShoichiImamura/Post/Image01.jpg"
+  image_ctype: "image/jpeg"
+  image_width: 667.0
+  image_height: 1000.0
+
+post_17:
+  id: 17
+  user_id: 1
+  post_token: <%= Digest::SHA1.hexdigest("17" + rand(1..20).to_s) %>
+  text: 初めての投稿です
+  latitude: 36.09405
+  longitude: 140.109673
