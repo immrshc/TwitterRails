@@ -6,17 +6,15 @@ class Account::AccountController < ApplicationController
 		userArray = []
 		user = User.find_by(user_params)
 		if user then
-			@userArray = userArray.push user
+			@userArray = userArray.push Account.new(user, user)
 		end
 	end
 
 	def show_following
 		userArray = []
 		user = User.find_by(user_params)
-		logger.debug("=======================")
 		if user then
 			Relationship.where(follower_id: user.id).each do |relationship|
-				logger.debug("relationship.following.user_token:#{relationship.following.user_token}")
 				userArray.push Account.new(relationship.following, user)
 			end
 			@userArray = userArray.reverse

@@ -1,3 +1,4 @@
-json.array!(@userArray) do |myself|
-	json.extract! myself, :username, :user_token, :user_identifier, :icon_image_url
+json.array!(@userArray) do |account|
+	json.extract! account.user, :user_token, :username, :user_identifier, :icon_image_url
+	json.extract! account, :follow_state, :following_count, :follower_count
 end

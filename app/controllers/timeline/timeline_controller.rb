@@ -1,18 +1,16 @@
 class Timeline::TimelineController < ApplicationController
-	protect_from_forgery :except => [:show_timeline, :show_reply, :show_mypost, :show_myfavorite]
-	def test
-		#ユーザ1がリツイートした投稿
-		#render json: Retweet.find_by(user_id: 1).post
-		#投稿3へのリプライ
-		#render json: Post.where(reply_id: 3)
-		#ユーザ1がフォローしているユーザ
-		#array = []
-		#Relationship.where(follower_id: 1).each do |relationsip|
-		#	array.push relationsip.followed
-		#end
-		#render json: array
-	end
+	protect_from_forgery :except => [:show_timeline, :show_geography, :show_reply, :show_mypost, :show_myfavorite]
 
+	#ユーザ1がリツイートした投稿
+	#render json: Retweet.find_by(user_id: 1).post
+	#投稿3へのリプライ
+	#render json: Post.where(reply_id: 3)
+	#ユーザ1がフォローしているユーザ
+	#array = []
+	#Relationship.where(follower_id: 1).each do |relationsip|
+	#	array.push relationsip.followed
+	#end
+	#render json: array
 
 	def show_timeline
 		user = User.find_by(user_params)
@@ -41,6 +39,23 @@ class Timeline::TimelineController < ApplicationController
 			timeLineArray.sort_by!{|t| t.post.created_at}
 			@timeLineArray = timeLineArray.reverse
 		
+		end
+	end
+	
+	def show_geography
+		user = User.find_by(user_params)
+		timeLineArray = []
+		if user && map_params then
+			posts = Timeline::Geography.new(map_params).get_near_posts
+			if posts then
+				logger.debug('=========={timeLineArray.count}====================')
+
+				posts.each do |post|
+					timeLineArray.push Timeline.new(post, user)
+				end
+			end
+			logger.debug(timeLineArray.count)
+			@timeLineArray = timeLineArray.reverse
 		end
 	end
 
@@ -93,7 +108,7 @@ class Timeline::TimelineController < ApplicationController
 		end
 
 	end
-
+	
 	private 
 	def user_params
 		params.require(:user).permit(:user_token, :user_identifier)
@@ -101,6 +116,10 @@ class Timeline::TimelineController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:post_token)
+	end
+
+	def map_params
+		params.require(:map).permit(:latitude, :longitude)
 	end
 
 end

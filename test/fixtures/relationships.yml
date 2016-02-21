@@ -27,3 +27,13 @@ relationship_6:
         id: 6
         follower_id: 3
         following_id: 2
+
+relationship_7:
+        id: 7
+        follower_id: 3
+        following_id: 4
+
+relationship_8:
+        id: 8
+        follower_id: 4
+        following_id: 3

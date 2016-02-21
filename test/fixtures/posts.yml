@@ -3,8 +3,8 @@ post_1:
   user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("1" + rand(1..20).to_s) %>
   text: これがはじめての投稿です
-  latitude: 35.685175
-  longitude: 139.7528
+  latitude: 36.089642
+  longitude: 140.106282
   image_key: "ShoichiImamura/Post/Image01.jpg"
   image_ctype: "image/jpeg"
   reply_id: 3
@@ -16,8 +16,8 @@ post_2:
   user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("2" + rand(1..20).to_s) %>
   text: これが2度目の投稿です
-  latitude: 35.685654
-  longitude: 139.756073
+  latitude: 36.089365
+  longitude: 140.105381
   image_key: "ShoichiImamura/Post/Image02.jpg"
   image_ctype: "image/jpeg"
   reply_id: 3
@@ -29,8 +29,8 @@ post_3:
   user_id: 2 
   post_token: <%= Digest::SHA1.hexdigest("3" + rand(1..20).to_s) %>
   text: This is my first posting!
-  latitude: 35.680634
-  longitude: 139.766373
+  latitude: 36.089757
+  longitude: 140.105381
   image_key: "Shoichi/Post/Image03.jpg"
   image_ctype: "image/jpeg"
   image_width: 320.0
@@ -41,16 +41,16 @@ post_4:
   user_id: 2
   post_token: <%= Digest::SHA1.hexdigest("4" + rand(1..20).to_s) %>
   text: This is my second posting!
-  latitude: 35.683632
-  longitude: 139.744915
+  latitude: 36.091844
+  longitude: 140.105381
   
 post_5:
   id: 5
   user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("5" + rand(1..20).to_s) %>
   text: Hello World!
-  latitude: 35.678194
-  longitude: 139.744057
+  latitude: 36.09408
+  longitude: 140.105381
   image_key: "Imamura/Post/Image06.jpg"
   image_ctype: "image/jpeg"
   reply_id: 6
@@ -62,5 +62,5 @@ post_6:
   user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("6" + rand(1..20).to_s) %>
   text: Welcome to Twitter!
-  latitude: 35.681540
-  longitude: 139.748692
+  latitude: 36.10408
+  longitude: 140.105381

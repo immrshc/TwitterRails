@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'geocoder'
 gem 'fastimage'
 gem 'dotenv-rails'
 gem 'aws-sdk'

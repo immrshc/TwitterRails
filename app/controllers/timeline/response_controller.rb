@@ -6,7 +6,7 @@ class Timeline::ResponseController < ApplicationController
 		user = User.find_by(user_params)
 		post = Post.find_by(post_params)
 		favorite = Favorite.new(user_id: user.id, post_id: post.id)
-		if favorite.save
+		if favorite.save then
 			@result = true
 		else
 			@result = false
@@ -17,7 +17,7 @@ class Timeline::ResponseController < ApplicationController
 		user = User.find_by(user_params)
 		post = Post.find_by(post_params)
 		retweet = Retweet.new(user_id: user.id, post_id: post.id)
-		if retweet.save
+		if retweet.save then
 			@result = true
 		else
 			@result = false

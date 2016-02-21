@@ -16,10 +16,17 @@ user_2:
 
 user_3:
   id: 3
-  user_identifier: imamura
   user_token: bc131d92d923c398
+  user_identifier: imamura
   username: Imamura
   hashed_password: <%= BCrypt::Password.create('1106') %>
   email: syoichiimamura@yahoo.com
 
+user_4:
+  id: 4
+  user_token: lt194x92e923a391
+  user_identifier: freee
+  username: freee
+  hashed_password: <%= BCrypt::Password.create('1106') %>
+  email: freee@gmail.com
 
