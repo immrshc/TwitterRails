@@ -6,8 +6,6 @@ class Post::PostController < ApplicationController
 		post = Post.new(post_params)
 		post.user = user
 		post.reply_id = get_reply_id
-		logger.debug('====================')
-		logger.debug(post)
 		if post.save then
 			@result = true
 		else
@@ -18,16 +16,14 @@ class Post::PostController < ApplicationController
 	def upload_with_image
 		image = params[:image]
 		post = Post.new(text: params[:text], latitude: params[:latitude].to_f, longitude: params[:longitude].to_f)
-		#post = Post.new(post_params)
 		user = User.find_by(user_token: params[:user_token], user_identifier: params[:user_identifier])
-		#user = User.find_by!(user_params)
 		post.user = user
 		if params[:receiver_token] then
 			post.reply_id = Post.find_by(post_token: params[:receiver_token]).id
 		end
 		post.set_image(image)
-		logger.debug('====================')
-		logger.debug(post)
+		logger.debug('============================')
+		logger.debug(image)
 		if post.save
 			res = Post::AdministratorToAws.new.put_image(image, post.image_key)
 			if res 
@@ -40,8 +36,6 @@ class Post::PostController < ApplicationController
 
 	def download_image
 		post = Post.find_by(post_params)
-		logger.debug('===========================')
-		logger.debug(post.image_key)
 		res =  Post::AdministratorToAws.new.get_image(post.image_key)
 		send_data res.body.read, type: post.image_ctype, disposition: :inline
 	end

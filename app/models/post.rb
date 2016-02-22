@@ -27,7 +27,7 @@ class Post < ActiveRecord::Base
 	private
 	def file_invalid?(image)
 		ps = ['image/jpeg', 'image/jpg', 'image/gif', 'image/png']
-		unless ps.include?(image.content_type) && image.size < 1.megabyte then
+		unless ps.include?(image.content_type) && image.size < 2.megabyte then
 			logger.debug('=====================validate==================')
 			logger.debug("画像のタイプ: #{image.content_type}, 容量: #{image.size}")
 			false

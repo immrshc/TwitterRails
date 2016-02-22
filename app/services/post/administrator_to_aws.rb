@@ -14,7 +14,7 @@ class Post::AdministratorToAws
 	end
 
 	def put_image(image, image_key)
-		@s3.put_object(
+        @s3.put_object(
 			bucket: "www.imagehike",
 			body: image,
 			key: image_key,
