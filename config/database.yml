@@ -15,8 +15,9 @@ default: &default
   pool: 5
   username: railsuser
   password: 1106
-  socket: /tmp/mysql.sock
-  
+  #socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
+
 development: &development
   adapter: mysql2
   encoding: utf8
@@ -25,6 +26,7 @@ development: &development
   timeout: 5000
   username: railsuser
   password: 1106
+  socket: /var/lib/mysql/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

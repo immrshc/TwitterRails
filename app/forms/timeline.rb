@@ -14,7 +14,8 @@ class Timeline
 		@user = user
 
 		if post.image_key then
-			@image_url = "http://localhost:3000/post/download/image?post[id]=#{post.id}"
+			@image_url = "http://52.193.43.147:3000/post/download/image?post[id]=#{post.id}"
+			#@image_url = "http://localhost:3000/post/download/image?post[id]=#{post.id}"
 		else
 			@image_url = ""
 		end

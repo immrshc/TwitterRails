@@ -1,0 +1,13 @@
+current directory: /home/rails/TwitterRails/vendor/bundle/ruby/2.2.0/gems/json-1.8.3/ext/json
+/usr/local/src/rbenv/versions/2.2.1/bin/ruby -r ./siteconf20160222-17846-1vaoc5w.rb extconf.rb
+creating Makefile
+
+current directory: /home/rails/TwitterRails/vendor/bundle/ruby/2.2.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/rails/TwitterRails/vendor/bundle/ruby/2.2.0/gems/json-1.8.3/ext/json
+make "DESTDIR="
+make: `all' に対して行うべき事はありません.
+
+current directory: /home/rails/TwitterRails/vendor/bundle/ruby/2.2.0/gems/json-1.8.3/ext/json
+make "DESTDIR=" install
