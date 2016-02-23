@@ -16,12 +16,17 @@ class Post < ActiveRecord::Base
 
 	def set_image(image)
 		if file_invalid?(image)
-			logger.debug('=====================set_image==================')
 			self.image_key = "#{self.user.username}/Post/#{image.original_filename}"
 			self.image_ctype = image.content_type
 			self.image_width = get_image_frame(image)[0]
 			self.image_height = get_image_frame(image)[1]
-		end
+		    
+			logger.debug('=====================set_image==================')
+            logger.debug(image.original_filename)
+            logger.debug(image.content_type)
+            logger.debug(get_image_frame(image)[0])
+            logger.debug(get_image_frame(image)[1])
+        end
 	end
 
 	private
@@ -37,9 +42,7 @@ class Post < ActiveRecord::Base
 	end
 
 	def get_image_frame(image)
-		logger.debug('=====================path==================')
-		logger.debug(image.path)
-    		FastImage.size(image.path)
-    	end
+    	FastImage.size(image.path)
+   	end
 
 end

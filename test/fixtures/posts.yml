@@ -6,36 +6,34 @@ post_1:
   latitude: 36.089642
   longitude: 140.106282
   reply_id: 17
-  image_key: "ShoichiImamura/Post/Image01.jpg"
-  image_ctype: "image/jpeg"
+  image_key: ShoichiImamura/Post/Image01.jpg
+  image_ctype: image/jpeg
   image_width: 667.0
   image_height: 1000.0
+  created_at: 2016-02-22 13:41:01
 
 post_2:
   id: 2
   user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("2" + rand(1..20).to_s) %>
-  text: This is my first posting!
+  text: その人の行動でしか、本気でそう思っているか判断できないですよね。
   latitude: 36.089365
   longitude: 140.105381
   reply_id: 15
-  image_key: "ShoichiImamura/Post/Image02.jpg"
-  image_ctype: "image/jpeg"
-  image_width: 900.0
-  image_height: 1600.0
+  created_at: 2016-02-22 13:41:02
 
 post_3:
   id: 3
   user_id: 3 
   post_token: <%= Digest::SHA1.hexdigest("3" + rand(1..20).to_s) %>
-  text: 私もです！
-  latitude: 36.089757
-  longitude: 140.105381
-  reply_id: 16
-  image_key: "Shoichi/Post/Image03.jpg"
-  image_ctype: "image/jpeg"
-  image_width: 320.0
-  image_height: 568.0
+  text: 都市経済のテスト勉強範囲広すぎやろ。。。
+  latitude: 36.090728
+  longitude: 140.10883
+  image_key: Shoichi/Post/keizai.jpg
+  image_ctype: image/jpeg
+  image_width: 400.0
+  image_height: 298.0
+  created_at: 2016-02-22 13:41:03
 
 post_4:
   id: 4
@@ -45,19 +43,21 @@ post_4:
   latitude: 36.091844
   longitude: 140.105381
   reply_id: 17
+  created_at: 2016-02-22 13:41:04
   
 post_5:
   id: 5
-  user_id: 1
+  user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("5" + rand(1..20).to_s) %>
-  text: Hello World!
+  text: イチカワのラーメンうまい！
   latitude: 36.09408
   longitude: 140.105381
   reply_id: 6
-  image_key: "Imamura/Post/Image06.jpg"
-  image_ctype: "image/jpeg"
+  image_key: Imamura/Post/ichikawa.jpg
+  image_ctype: image/jpeg
   image_width: 640.0
-  image_height: 1136.0
+  image_height: 480.0
+  created_at: 2016-02-22 13:41:05
 
 post_6:
   id: 6
@@ -66,22 +66,25 @@ post_6:
   text: Welcome to Twitter!
   latitude: 36.10408
   longitude: 140.105381
+  created_at: 2016-02-22 13:41:06
 
 post_7:
   id: 7
   user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("7" + rand(1..20).to_s) %>
-  text: 今を戦えない者に、次とか来年とかを言う資格はない。
+  text: メディアは動画、ゲームはVR、金融機関はフィンテック、メーカーはIoT、ECはシェアエコ、クラウドサービスはAIにそれぞれ投資するよ。起業する人はうまいことそれに合わせて動くといいかもね。
   latitude: 36.106036
   longitude: 140.113083
+  created_at: 2016-02-22 13:41:07
 
 post_8:
   id: 8
   user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("8" + rand(1..20).to_s) %>
-  text: 好機は、それが去ってしまうまで気づかれないものだ。
+  text: なぜ「誰でも一回は営業をやるべき」と思うのか。それは営業を一度経験することで、ビジネスのセンスが格段に上がるからだ。「売る」ということがどのようなことなのか知っているのと知らないのとでは、事業の本質を見極める力に大きな差がある。
   latitude: 36.106036
   longitude: 140.113083
+  created_at: 2016-02-22 13:41:08
 
 post_9:
   id: 9
@@ -90,14 +93,16 @@ post_9:
   text: どんな芸術家でも最初は素人だった。
   latitude: 36.102016
   longitude: 140.108128
+  created_at: 2016-02-22 13:41:09
 
 post_10:
   id: 10
   user_id: 3
   post_token: <%= Digest::SHA1.hexdigest("10" + rand(1..20).to_s) %>
-  text: イチカワのラーメンうまい！
+  text: 一人になるんだ。そうすれば、真実を求めてあれこれ考える時間ができるよ。聖なる好奇心をもちたまえ。by アインシュタイン
   latitude: 36.096764
   longitude: 140.108128
+  created_at: 2016-02-22 13:41:10
 
 post_11:
   id: 11
@@ -106,42 +111,47 @@ post_11:
   text: 世の中 正しいことばかりではありません。 お気をつけて。
   latitude: 36.093283
   longitude: 140.109003
+  created_at: 2016-02-22 13:41:11
 
 post_12:
   id: 12
   user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("12" + rand(1..20).to_s) %>
-  text: あきらめたらそこで試合終了だよ
+  text: 多くの人が、ブロックチェーンのは、信頼の前提をおかずに、分散型の合意形成ができると考えておりますが、それはパブリックな前提で、単に分散的な合意形成であれば、古くからビザンチンフォルトトレランス（BFT)などのプロトコルが存在しています。
   latitude: 36.10408
   longitude: 140.110727
+  created_at: 2016-02-22 13:41:12
 
 post_13:
   id: 13
-  user_id: 3
+  user_id: 2
   post_token: <%= Digest::SHA1.hexdigest("13" + rand(1..20).to_s) %>
-  text: 下手糞の上級者への道のりは己が下手さを知りて一歩目
-  latitude: 36.095605
-  longitude: 140.105381
-  image_key: "Imamura/Post/Image06.jpg"
-  image_ctype: "image/jpeg"
-  image_width: 640.0
-  image_height: 1136.0
+  text: おふくろさん弁当で、日替わり弁当のセールやってる。これで300円かよ…
+  latitude: 36.104657
+  longitude: 140.104265
+  image_key: Imamura/Post/ohuben.jpg
+  image_ctype: image/jpeg
+  image_width: 300.0
+  image_height: 225.0
+  created_at: 2016-02-22 13:41:13
 
 post_14:
   id: 14
   user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("14" + rand(1..20).to_s) %>
-  text: 思った通りの人生ではなかった。しかし、よかったとなら言える人生だったかもしれない
-  latitude: 36.094654
-  longitude: 140.110727
+  text: また、おふ弁やすくなっとるやん。
+  latitude: 36.107147
+  longitude: 140.105483
+  created_at: 2016-02-22 13:41:14
 
 post_15:
   id: 15
   user_id: 2
   post_token: <%= Digest::SHA1.hexdigest("15" + rand(1..20).to_s) %>
-  text: 森の分かれ道では人の通らぬ道を選ぼう。すべてが変わる
+  text: 人間の発言と行動が一致しないことが度々あるのは、発言はその人の思想や思考に依存し、行動はその人の本能やスケール(器量)に依存するからだろうな。二つの出どころは微妙に違う。
   latitude: 36.10408
   longitude: 140.105381
+  created_at: 2016-02-22 13:41:15
 
 post_16:
   id: 16
@@ -150,15 +160,17 @@ post_16:
   text: It's not too late to be a genius.
   latitude: 36.09405
   longitude: 140.109673
-  image_key: "ShoichiImamura/Post/Image01.jpg"
-  image_ctype: "image/jpeg"
+  image_key: ShoichiImamura/Post/Image01.jpg
+  image_ctype: image/jpeg
   image_width: 667.0
   image_height: 1000.0
+  created_at: 2016-02-22 13:41:16
 
 post_17:
   id: 17
   user_id: 1
   post_token: <%= Digest::SHA1.hexdigest("17" + rand(1..20).to_s) %>
-  text: 初めての投稿です
+  text: 初めての投稿!!
   latitude: 36.09405
   longitude: 140.109673
+  created_at: 2016-02-22 13:41:17

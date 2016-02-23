@@ -22,8 +22,6 @@ class Post::PostController < ApplicationController
 			post.reply_id = Post.find_by(post_token: params[:receiver_token]).id
 		end
 		post.set_image(image)
-		logger.debug('============================')
-		logger.debug(image)
 		if post.save
 			res = Post::AdministratorToAws.new.put_image(image, post.image_key)
 			if res 
