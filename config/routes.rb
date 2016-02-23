@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
  
   namespace :timeline do
-  	get 'test' => 'timeline#test'
   	post 'show' => 'timeline#show_timeline'
 	post 'show/reply' => 'timeline#show_reply'
 	post 'show/mypost' => 'timeline#show_mypost'
@@ -20,7 +19,6 @@ Rails.application.routes.draw do
   end
 
   namespace :post do
-  	get 'test' => 'post#test'
   	post 'without' => 'post#upload'
 	post 'with' => 'post#upload_with_image'
 	get 'download/image' => 'post#download_image'

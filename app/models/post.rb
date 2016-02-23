@@ -20,12 +20,6 @@ class Post < ActiveRecord::Base
 			self.image_ctype = image.content_type
 			self.image_width = get_image_frame(image)[0]
 			self.image_height = get_image_frame(image)[1]
-		    
-			logger.debug('=====================set_image==================')
-            logger.debug(image.original_filename)
-            logger.debug(image.content_type)
-            logger.debug(get_image_frame(image)[0])
-            logger.debug(get_image_frame(image)[1])
         end
 	end
 
